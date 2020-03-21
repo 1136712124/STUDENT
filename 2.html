@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+        <script type="text/javascript">
+        var x,y,j;
+        x=parseInt(prompt("输入第一个整数",""));
+        y=parseInt(prompt("输入第二个整数",""));
+        for(x;x<=y;x++)
+            if(x==2){
+            document.write("素数为"+x);
+          }
+          {  for(j=2;j<x;j++)
+            
+              {if(x%j==0){break;}
+              else if(j==parseInt(Math.sqrt(x-1))){
+                document.write(x+" ");
+              }
+              }
+             
+          }
+          
+        </script>
+</body>
+</html>

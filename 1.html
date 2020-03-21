@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>答题小游戏</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var x,y,z,result,answer,g;
+    while(true)
+    {
+        x=Math.floor(Math.random()*90)+10;
+        y=Math.floor(Math.random()*90)+10;
+        z=Math.floor(Math.random()*3)+1;
+    if(z==1){
+        result=x+y;
+        answer=parseFloat(prompt(x+"+"+y+"=","0"));
+        if (answer==result) {
+            g=confirm("答对！是否继续")
+        }
+        else{
+            g=confirm("答错！是否继续")
+        }
+        
+        }
+    if(z==2){
+        result=x-y;
+        answer=parseFloat(prompt(x+"-"+y+"=","0"));
+        if (answer==result) {
+            g=confirm("答对！是否继续")
+        }
+        else{
+            g=confirm("答错！是否继续")
+        }
+        }
+    if(z==3){
+        result=x*y;
+        answer=parseFloat(prompt(x+"*"+y+"=","0"));
+        if (answer==result) {
+            g=confirm("答对！是否继续")
+        }
+        else{
+            g=confirm("答错！是否继续")
+            }
+            
+        }
+        if(!g)break;
+    }
+    </script>
+</body>
+</html>
