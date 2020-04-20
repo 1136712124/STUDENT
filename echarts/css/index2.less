@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: relative;
+    height: 1.25rem;
+    background-color: #4ea5d8;
+    h1{
+        font-size: .475rem;
+        color:white;
+        text-align: center; 
+        line-height: 1rem;
+    }
+    .showTime{
+        position: absolute;
+        top: 0;
+        right: .375rem;
+        line-height: .9375rem;
+        color: rgba(255, 255, 255,.6)
+    }
+}
+.mainbox{
+    display: flex;
+    .colum{
+        flex: 3;
+        background-color: #44eeaa;
+        height: 1.25rem;
+        .panel{
+            height: 3.875rem;
+            border:1px solid rgb(25,186,139);
+            background-color: tomato;
+            margin-top: .125rem;
+            position: relative;
+            &::before{
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                width: .125rem;
+                height: .125rem;
+                border-top: 2px solid #02a6b5;
+                border-left: 2px solid #02a6b5;
+            } 
+        }
+    }
+    .map{
+        flex: 5;
+        background-color: aqua;
+        height: 1.25rem;
+    }
+}

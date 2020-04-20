@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="http://ico.z01.com/zico.min.css">
+    <style>
+        body {
+            margin-top: 50px;
+            padding: 0;
+        }
+
+        @keyframes turn {
+            0% {
+                height: 100%;
+            }
+
+            100% {
+                height: 0%;
+            }
+        }
+
+        .in {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: black;
+            animation: turn 0.3s linear;
+            animation-fill-mode: forwards;
+        }
+
+        /* @media (min-width:1200px) {
+            .container {
+                max-width: 1300px
+            }
+        } */
+
+        .logo {
+            background-image: url(http://cdn.hommk.com/pcgame/ubi2015/img/logo.jpg);
+            background-repeat: no-repeat;
+            /* background-size: contain; */
+            width: 200px;
+            height: 50px;
+        }
+
+        .nav-strat {
+            background-image: url(http://cdn.hommk.com/pcgame/ubi2015/img/nav_bg.jpg);
+            background-repeat: repeat-x;
+            padding: 0;
+            background-color: #121212;
+        }
+
+        .nav-item>.active {
+            background-color: #4c4c4c;
+        }
+
+        @media (max-width: 767.98px) {
+            #navbarNav li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        #navbarNav li a {
+            padding: 12px 35px 12px 35px;
+        }
+
+        .nav-mr {
+            margin-right: 30px;
+        }
+        .nav-mr:focus{
+            outline: none;
+        }
+        .carousel-left {
+            height: 50px;
+            width: 50px;
+            left: 20px;
+            top: 80%;
+        }
+
+        .carousel-right {
+            height: 50px;
+            width: 50px;
+            right: 20px;
+            top: 80%;
+        }
+
+        .carousel-left img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .carousel-right img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* .carousel-buttom li {
+            border: none;
+            height: 50px;
+            width: 50px;
+            text-indent: 0;
+        } */
+
+        /* .carousel-buttom img {
+            width: 90%;
+        } */
+
+        .nav-uplay {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        @media(max-width: 767.98px) {
+            .nav-uplay {
+                top: 10px;
+            }
+        }
+
+        .uplay {
+            height: 50px;
+            display: inline-block;
+            padding: 5px 10px;
+            background: #666;
+            vertical-align: middle;
+            transform: skew(-15deg) translateZ(0);
+        }
+
+        .nav-uplay img {
+            width: auto;
+            padding-top: 9px;
+            transform: skew(15deg) translateZ(0);
+        }
+
+        @media (max-width: 767.98px) {
+            .uplay {
+                display: none;
+            }
+        }
+
+        @keyframes carousel-content {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .carousel-content {
+            position: absolute;
+            top: 8vw;
+            width: 100%;
+            line-height: 1.2;
+            animation: carousel-content 2s linear;
+        }
+
+        .carousel1-p1 {
+            color: #8a8e46;
+            font-size: 2.6vw;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .carousel1-p2 {
+            color: #fff;
+            font-size: 5.6vw;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .carousel1-p3 {
+            color: #fff;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        @keyframes btns {
+            0% {
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .btns {
+            position: absolute;
+            top: 55%;
+            text-align: center;
+            width: 100%;
+            font-size: 18px;
+            animation: btns 2s linear;
+        }
+
+        .carousel1-btn1 {
+            margin-right: 15px;
+            width: 180px;
+            height: 50px;
+            border-radius: 25px;
+        }
+
+        .carousel1-btn2 {
+            width: 180px;
+            height: 50px;
+            border-radius: 25px;
+        }
+
+        .carousel1-btn1:focus {
+            box-shadow: none;
+        }
+
+        .carousel1-btn2:focus {
+            box-shadow: none;
+        }
+
+        .activity {
+            background-color: #000;
+            width: 100%;
+        }
+
+        .newest {
+            width: 100%;
+            font-weight: 500;
+            line-height: 150px;
+            text-align: center;
+            height: 150px;
+            vertical-align: middle;
+        }
+
+        .newest>h2 {
+            display: inline;
+            color: #fff;
+            position: relative;
+        }
+
+        .newest>h2::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 40px;
+            position: absolute;
+            left: -30px;
+            top: 0px;
+            background-color: #666;
+            transform: skew(-15deg) translateZ(0);
+        }
+
+        .newest>h2::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 40px;
+            position: absolute;
+            right: -30px;
+            top: 0px;
+            background-color: #666;
+            transform: skew(-15deg) translateZ(0);
+        }
+
+        .activity-img {
+            width: 48%;
+            height: auto;
+            float: left;
+            margin-left: 1.3%;
+        }
+
+        .activity-left {
+            height: 50px;
+            width: 50px;
+            left: 20px;
+            top: 20px;
+        }
+
+        .activity-right {
+            height: 50px;
+            width: 50px;
+            right: 20px;
+            top: 20px;
+        }
+
+        .activity-left img {
+            width: 40px;
+            height: 40px;
+            ;
+        }
+
+        .activity-right img {
+            width: 40px;
+            height: 40px;
+
+        }
+
+        .activity-control {
+            width: 100%;
+            position: relative;
+            min-height: 100px;
+            background-color: #000;
+        }
+
+        .activity-control ol {
+            position: absolute;
+            top: 35px;
+            margin-bottom: auto;
+        }
+
+        .activity-control li {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: none;
+            border-radius: 90px;
+        }
+
+        .consult {
+            padding-bottom: 50px;
+        }
+
+        .consult h2 {
+            color: #000;
+        }
+
+        .consult-card {
+            margin-bottom: 50px;
+        }
+
+        .consult-cardimg {
+            float: left;
+            width: 50%;
+        }
+
+        .consult-cardimg img {
+            width: 100%;
+            height: auto;
+        }
+
+        .consult-cardText {
+            float: left;
+            width: 50%;
+            height: 100%;
+            padding: 0px 10px 0px 10px;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            .consult-cardimg {
+                width: 100%;
+            }
+
+            .consult-cardText {
+                width: 100%;
+            }
+
+        }
+
+        .consult-cardText h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .consult-cardText h3 a {
+            color: #000;
+            text-decoration: #000;
+        }
+
+        .consult-cardText .p-date {
+            font-size: 15px;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .consultp {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .btn-more {
+            width: 100%;
+        }
+
+        .btn-more .btn-m {
+            background-color: #ffa400;
+            border: none;
+            width: 180px;
+            height: 50px;
+            border-radius: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+
+        .games {
+            width: 100%;
+            background-color: #333333;
+            padding-bottom: 50px;
+        }
+
+        .games-card {
+            display: inline-block;
+            width: 284px;
+            margin: 4px 8px 50px 8px;
+        }
+
+        .games-card:hover {
+            opacity: 0.8;
+        }
+
+        .games-cardimg {
+            width: 100%;
+        }
+
+        .games-cardimg a img {
+            width: 100%;
+            height: auto;
+        }
+
+        .games-cardText {
+            width: 100%;
+            background-color: #000;
+            line-height: 1.4;
+            padding: 9px;
+        }
+
+        .games-cardText h3 {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .games-cardText p {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .pc-ico {
+            display: inline-block;
+            background: url(https://cdn.hommk.com/pcgame/ubi2015/img/u2019/pc.png) no-repeat;
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+        }
+
+        .cons-ico {
+            display: inline-block;
+            background: url(https://cdn.hommk.com/pcgame/ubi2015/img/u2019/cons.png) no-repeat;
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+        }
+
+        .video {
+            background-color: #000;
+            padding-bottom: 50px;
+        }
+
+        .video-mian {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .video-left {
+            width: 73%;
+            position: relative;
+        }
+
+        .video-left img {
+            width: 100%;
+
+        }
+
+        .video-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding-left: 3%;
+            height: 10%;
+            line-height: 2;
+            color: #fff;
+            font-size: 2vw;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%
+        }
+
+        .video-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            width: 27%;
+            height: 100%;
+            padding: 1% 1% 1% 0;
+        }
+
+        .videolist {
+            overflow-y: scroll;
+            width: 100%;
+            height: 100%;
+        }
+
+        .videolist::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+        }
+
+        .videolist::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #676e82;
+        }
+
+        .videolist::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: #F5F5F5;
+            margin: 20px;
+        }
+
+        .v-item {
+            position: relative;
+            margin: 4%;
+        }
+
+        .v-item img {
+            width: 100%;
+        }
+
+        .v-item .video-caption {
+            font-size: 1vw;
+            height: 20%;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 30px 0;
+        }
+
+        .wwbt {
+            margin: 0 30px;
+            padding: 40px 0;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+
+        .wwbt div {
+            padding: 15px 40px;
+        }
+
+        .wwbt img {
+            width: 50px;
+            height: auto;
+        }
+
+        .wwbt-w img {
+            width: 100%;
+        }
+
+        .wwbt-wximg {
+            position: relative;
+            z-index: 9;
+            /* z-index要加position */
+        }
+
+        .wwbt .wwbt-w {
+            padding: 15px 15px;
+            width: 200px;
+            height: 250px;
+            background-color: #cdcdcd;
+            position: absolute;
+            bottom: 0px;
+            left: -35px;
+            z-index: 1;
+            border-radius: 20px;
+            display: none;
+        }
+
+        .wwbt-wx {
+            position: relative;
+
+        }
+
+        .footer-link {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer-link h2 {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .footer-link a {
+            color: #9d9d9d;
+            font-size: 12px;
+            text-decoration: none;
+            padding-right: 10px;
+        }
+
+        .footer-link a:hover {
+            color: #fff;
+        }
+
+        .footer-link a::before {
+            content: '*';
+        }
+
+        .footer-language {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-language button {
+            color: rgb(187, 178, 178);
+            background-color: #353535;
+            border: none;
+            font-size: 16px;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            /* 边框轮廓    */
+        }
+
+        .footer-language button:hover {
+            color: #fff;
+        }
+
+        .footer-language button span::after {
+            content: ' ';
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid white;
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            margin-left: 3px;
+
+        }
+
+        .last {
+            text-align: center;
+            color: #9d9d9d;
+            font-size: 14px;
+        }
+
+        .last a:hover {
+            color: #fff;
+        }
+
+        .last li a {
+            color: #9d9d9d;
+            text-decoration: none;
+            padding-right: 10px;
+        }
+
+        .last li:first-child::after {
+            content: '/';
+        }
+
+        .last p a {
+            color: #9d9d9d;
+            text-decoration: none;
+        }
+
+        .last p>img {
+            margin-right: 10px;
+        }
+
+        .dropdown-button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+        }
+
+        .dropdown-button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="in"></div> -->
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top nav-strat">
+        <div class="container-fluid p-0">
+            <a href="" class="logo"></a>
+
+            <button class="navbar-toggler nav-mr" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav-uplay">
+                <a href="" class="uplay"><img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/uplay.png" alt=""></a>
+                <a class="dropdown"><button class="dropdown-button" data-toggle="dropdown"><i
+                            class="zi zi_search"></i></button>
+                    <div class="dropdown-menu dropdown-menu-right p-0">
+                        <div class="">
+                            <input id="my-input" class="" type="text" name="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">游戏</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">商城</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">支持</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a href="#" class="nav-link disabled">Uplay</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="carousel slide position-relative" data-ride="carousel" data-interval="false" data-wrap="true"
+        data-pause="hover" id="myCarousel">
+        <ol class="carousel-indicators carousel-buttom">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/banner/GRB_ep2_pc.jpg" class="d-block w-100"
+                    alt="">
+                <div class="carousel-content">
+                    <p class="carousel1-p1">幽灵行动：断点</p>
+                    <p class="carousel1-p2">最大规模更新！第二章上线</p>
+                    <p class="carousel1-p3">全新得 “ 幽灵体验 ” 及多项新增功能</p>
+                </div>
+                <div class="btns">
+                    <button class="btn btn-outline-light carousel1-btn1" type="button">宣传片</button>
+                    <button class="btn btn-outline-light carousel1-btn2" type="button">了解详细</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/banner/ACRC_pc.jpg" class="d-block w-100"
+                    alt="">
+                <div class="carousel-content">
+                    <p class="carousel1-p1 text-danger">刺客信条：叛逆者合集</p>
+                    <p class="carousel1-p2">两款大作，一部合集</p>
+                    <p class="carousel1-p3"> 12月6日登陆Nintendo Switch</p>
+                </div>
+                <div class="btns">
+                    <button class="btn btn-outline-light carousel1-btn1" type="button">立即购买</button>
+                    <button class="btn btn-outline-light carousel1-btn2" type="button">了解更多</button>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/banner/ANNO1800_s2_pc.jpg"
+                    class="d-block w-100" alt="">
+                <div class="carousel-content">
+                    <p class="carousel1-p1 text-danger">纪元1800</p>
+                    <p class="carousel1-p2">第二季度公布 铸就权力之座</p>
+                    <p class="carousel1-p3">包含"权力之座","丰收之光","群狮之地"三个扩展包</p>
+                </div>
+                <div class="btns">
+                    <button class="btn btn-outline-light carousel1-btn1" type="button">观赏视频</button>
+                    <button class="btn btn-outline-light carousel1-btn2" type="button">了解更多</button>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev carousel-left" href="#myCarousel" data-slide="prev">
+            <img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/l_a.png" alt="">
+        </a>
+        <a class="carousel-control-next carousel-right" href="#myCarousel" data-slide="next">
+            <img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/r_a.png" alt="">
+        </a>
+    </div>
+
+    <div class="activity">
+        <div class="newest">
+            <h2>最新活动</h2>
+        </div>
+        <div>
+            <div class="carousel slide" id="myActivity" data-ride="carousel" data-interval="false" data-wrap="true"
+                data-pause="hover">
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/185/original_1585040048.jpg?1585040048"
+                            class=" activity-img" alt="">
+                        <img src="https://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/203/original_1585900724.jpg?1585900724"
+                            class=" activity-img" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/204/original_1585900739.jpg?1585900739"
+                            class="activity-img" alt="">
+                        <img src="https://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/202/original_1585718123.jpg?1585718123"
+                            class= "activity-img" alt="">
+                    </div>
+                </div>
+                <div class="activity-control">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myActivity" data-slide-to="0" class="active"></li>
+                        <li data-target="#myActivity" data-slide-to="1" ></li>
+                    </ol>
+                    <a class="carousel-control-prev activity-left" href="#myActivity" data-slide="prev">
+                        <img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/l_a.png" alt="">
+                    </a>
+                    <a class="carousel-control-next activity-right" href="#myActivity" data-slide="next">
+                        <img src="https://cdn.hommk.com/pcgame/ubi2015/img/u2019/r_a.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="consult">
+        <div class="newest">
+            <h2>最新资讯</h2>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-xl-6 p-0 consult-card">
+                    <div class="consult-cardimg">
+                        <a href="">
+                            <img src="http://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/198/original_1585560375.jpg?1585560375"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="consult-cardText">
+                        <h3><a href=""><a href="">同游极光岛！《幽灵行动：断点》推出试玩与“好友通行证”</a></h3>
+                        <p class="p-date">2020/03/30</p>
+                        <p class="consultp">《幽灵行动：断点》免费试玩及“好友通行证”现已正式推出。准备好与你的好友一同探索极光岛吧！</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 p-0 consult-card">
+                    <div class="consult-cardimg">
+                        <a href="">
+                            <img src="http://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/193/original_1585099805.jpg?1585099805"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="consult-cardText">
+                        <h3><a href=""><a href="">建造宏伟宫殿！《纪元1800》最新DLC《权力之座》现已推出</a></h3>
+                        <p class="p-date">2020/03/25</p>
+                        <p class="consultp">
+                            知名城市建设及策略游戏《纪元1800》第二季通行证中的首个DLC《权力之座》现已登陆PC平台。同时，所有《纪元1800》玩家还将获得影响力系统优化的免费更新内容。</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 p-0 consult-card">
+                    <div class="consult-cardimg">
+                        <a href="">
+                            <img src="http://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/189/original_1585047283.jpg?1585047283"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="consult-cardText">
+                        <h3><a href=""><a href="">《幽灵行动：断点》- 游戏更新 2.0.0 版本说明</a></h3>
+                        <p class="p-date">2020/03/24</p>
+                        <p class="consultp">《幽灵行动：断点》中的新功能、Bug 修复、平衡性以及改进，版本更新2.0.0 将在 3 月 24 日星期二发布。</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 p-0 consult-card">
+                    <div class="consult-cardimg">
+                        <a href="">
+                            <img src="http://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/183/original_1585023097.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="consult-cardText">
+                        <h3><a href=""><a href="">《幽灵行动：断点》最大规模更新，第二章更新明日上线！</a></h3>
+                        <p class="p-date">2020/03/30</p>
+                        <p class="consultp">育碧宣布《幽灵行动：断点》第二章更新将于明日正式上线。与之同时推出的还有游戏2.0版本更新，包括全新的“幽灵体验”以及多项新增功能。</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 p-0 consult-card">
+                    <div class="consult-cardimg">
+                        <a href="">
+                            <img src="http://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/177/original_1584767363.jpg?1584767363"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="consult-cardText">
+                        <h3><a href=""><a href="">跟2233娘一起舞蹈 BDF主题曲《彩虹节拍》加入《舞力全开》</a></h3>
+                        <p class="p-date">2020/03/30</p>
+                        <p class="consultp">
+                            育碧正式宣布与中国年轻世代高度聚集的文化社区和视频平台哔哩哔哩合作，将携手为世界范围内享有超高人气的音乐舞蹈游戏系列《舞力全开》打造全新歌曲《彩虹节拍》。</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 p-0 consult-card">
+                    <div class="consult-cardimg">
+                        <a href="">
+                            <img src="http://cdn.hommk.com/pcgame/upload/attachments/uploads/000/006/174/original_1584710763.jpg?1584710763"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="consult-cardText">
+                        <h3><a href=""><a href="">同游极光岛！《幽灵行动：断点》推出试玩与“好友通行证”</a></h3>
+                        <p class="p-date">2020/03/30</p>
+                        <p class="consultp">
+                            对于想要通过一些有趣和新颖的方式来保持精力充沛的人们，我们整理了一份当前免费育碧游戏的名单，希望它们可以为你在虚拟世界中带来一些舒适感，并在摆脱困境，享受团聚方面发挥一些作用。</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn-more">
+                <button class="btn btn-m" type="button">更多</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="games">
+        <div class="newest">
+            <h2>最新游戏</h2>
+        </div>
+        <div class="games-card">
+            <div class="games-cardimg"><a href=""><img
+                        src="http://cdn.hommk.com/pcgame/ubi2015/img/game/thumbnail/wdl.jpg" alt=""></a>
+            </div>
+            <div class="games-cardText">
+                <h3>看门狗:军团</h3>
+                <p>发布时间：即将发布</p>
+                <div class="pc-ico"></div>
+                <div class="cons-ico"></div>
+            </div>
+        </div>
+        <div class="games-card">
+            <div class="games-cardimg"><a href=""><img
+                        src="http://cdn.hommk.com/pcgame/ubi2015/img/game/thumbnail/wdl.jpg" alt=""></a>
+            </div>
+            <div class="games-cardText">
+                <h3>看门狗:军团</h3>
+                <p>发布时间：即将发布</p>
+                <div class="pc-ico"></div>
+                <div class="cons-ico"></div>
+            </div>
+        </div>
+        <div class="games-card">
+            <div class="games-cardimg"><a href=""><img
+                        src="http://cdn.hommk.com/pcgame/ubi2015/img/game/thumbnail/wdl.jpg" alt=""></a>
+            </div>
+            <div class="games-cardText">
+                <h3>看门狗:军团</h3>
+                <p>发布时间：即将发布</p>
+                <div class="pc-ico"></div>
+                <div class="cons-ico"></div>
+            </div>
+        </div>
+        <div class="games-card">
+            <div class="games-cardimg"><a href=""><img
+                        src="http://cdn.hommk.com/pcgame/ubi2015/img/game/thumbnail/wdl.jpg" alt=""></a>
+            </div>
+            <div class="games-cardText">
+                <h3>看门狗:军团</h3>
+                <p>发布时间：即将发布</p>
+                <div class="pc-ico"></div>
+                <div class="cons-ico"></div>
+            </div>
+        </div>
+        <div class="games-card">
+            <div class="games-cardimg"><a href=""><img
+                        src="http://cdn.hommk.com/pcgame/ubi2015/img/game/thumbnail/wdl.jpg" alt=""></a>
+            </div>
+            <div class="games-cardText">
+                <h3>看门狗:军团</h3>
+                <p>发布时间：即将发布</p>
+                <div class="pc-ico"></div>
+                <div class="cons-ico"></div>
+            </div>
+        </div>
+        <div class="games-card">
+            <div class="games-cardimg"><a href=""><img
+                        src="http://cdn.hommk.com/pcgame/ubi2015/img/game/thumbnail/wdl.jpg" alt=""></a>
+            </div>
+            <div class="games-cardText">
+                <h3>看门狗:军团</h3>
+                <p>发布时间：即将发布</p>
+                <div class="pc-ico"></div>
+                <div class="cons-ico"></div>
+            </div>
+        </div>
+        <div class="btn-more">
+            <button class="btn btn-m" type="button">更多</button>
+        </div>
+    </div>
+
+    <div class="video">
+        <div class="newest">
+            <h2>游戏视频</h2>
+        </div>
+        <div class="video-mian">
+            <div class="video-left"><img src="http://ubicdn.com/202003/GRBP_EP2_Trailer.jpg" alt="">
+                <div class="video-caption">《幽灵行动：断点》第二章</div>
+            </div>
+            <div class="video-right">
+                <div class="videolist">
+                    <div class="v-item">
+                        <img src="http://ubicdn.com/202003/BWH-ONYX_CN.jpg" alt="">
+                        <div class="video-caption">《幽灵行动：断点》第二章</div>
+                    </div>
+                    <div class="v-item">
+                        <img src="http://ubicdn.com/202003/BWH-ONYX_CN.jpg" alt="">
+                        <div class="video-caption">《幽灵行动：断点》第二章</div>
+                    </div>
+                    <div class="v-item">
+                        <img src="http://ubicdn.com/202003/BWH-ONYX_CN.jpg" alt="">
+                        <div class="video-caption">《幽灵行动：断点》第二章</div>
+                    </div>
+                    <div class="v-item">
+                        <img src="http://ubicdn.com/202003/BWH-ONYX_CN.jpg" alt="">
+                        <div class="video-caption">《幽灵行动：断点》第二章</div>
+                    </div>
+                    <div class="v-item">
+                        <img src="http://ubicdn.com/202003/BWH-ONYX_CN.jpg" alt="">
+                        <div class="video-caption">《幽灵行动：断点》第二章</div>
+                    </div>
+                    <div class="v-item">
+                        <img src="http://ubicdn.com/202003/BWH-ONYX_CN.jpg" alt="">
+                        <div class="video-caption">《幽灵行动：断点》第二章</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wwbt d-flex justify-content-center">
+            <div class="wwbt-wx"><a href="">
+                    <div class="wwbt-w">
+                        <img src="http://cdn.hommk.com/pcgame/ubi2015/img/ubi_mobile_qr.jpg" alt="">
+                    </div>
+                    <img class="wwbt-wximg" src="http://cdn.hommk.com/pcgame/ubi2015/img/u2019/wx_ico.png?1" alt="">
+                </a></div>
+            <div><a href=""><img src="http://cdn.hommk.com/pcgame/ubi2015/img/u2019/wb_ico.png?1" alt=""></a></div>
+            <div><a href=""><img src="http://cdn.hommk.com/pcgame/ubi2015/img/u2019/bili_ico.png?1" alt=""></a></div>
+            <div><a href=""><img src="http://cdn.hommk.com/pcgame/ubi2015/img/u2019/Tmall_icon.png?1" alt=""></a></div>
+        </div>
+        <div class="footer-link">
+            <h2>育碧游戏专区</h2>
+            <a href="">《幽灵行动：断点》专区</a> <a href="">《孤岛惊魂:新曙光》专区</a> <a href="">《刺客信条:奥德赛》专区</a> <a
+                href="">《刺客信条:起源》专区</a><a href="">《刺客信条》系列专区</a> <a href="">《孤岛惊魂5》专区</a> <a href="">孤岛惊魂》系列专区</a> <a
+                href="">《全境封锁》专区</a>
+            <a href="">《舞力全开2017》专区</a> <a href="">《看门狗2》专区</a> <a href="">《孤岛惊魂:野蛮纪源》专区</a> <a href="">《幽灵行动：荒野》专区</a>
+        </div>
+        <div class="footer-language">
+            <button>
+                <span>China - Simplified Chinese</span>
+            </button>
+        </div>
+        <div class="last">
+            <ul class="list-unstyled ">
+                <li class="list-inline-item"><a href="">关于育碧</a></li>
+                <li class='list-inline-item'><a href="">加入我们</a></li>
+            </ul>
+            <p>©2006-2019 Ubisoft Entertainment. All Rights Reserved. Ubisoft, ubi.com, and the Ubisoft logo are
+                trademarks of Ubisoft Entertainment in the U.S. and/or other countries.</p>
+            <p>上海碧汉网络科技有限公司</p>
+            <p>沪网文（2016）0067-067号 <a href="">沪ICP备10013909号-11</a> | 增值电信业务经营许可证: B2-20100035</p>
+            <p><a href=""><img src="http://cdn.hommk.com/pcgame/images/gameRFID.png?1485326505" alt=""></a></p>
+            <p><a href=""><img src="http://ubicdn.com/beian.png">沪公网安备 31010402002141号</a></p>
+        </div>
+    </footer>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+        let showWX = document.querySelector(".wwbt-wximg");
+        let showW = document.querySelector(".wwbt-w");
+        showWX.onmouseover = () => {
+            let wwbtW = document.querySelector(".wwbt-w");
+            wwbtW.style.display = "block";
+        };
+        showW.onmouseout = () => {
+            let wwbtW = document.querySelector(".wwbt-w");
+            wwbtW.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
